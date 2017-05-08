@@ -2,7 +2,7 @@ import ReactDOM, { render, unmountComponentAtNode } from 'react-dom'
 import React from 'react'
 import Alert from './react/alert.js'
 import Toast from './react/toast.js'
-import Loading from './react/loading.js'
+import CircleLoading from './react/circle-loading.js'
 import SVGCircleProgress from './react/circle-progress.js'
 import Nav from './react/nav.js'
 
@@ -21,7 +21,7 @@ let createTemporaryDOMNode = function (id) {
 let showLoading = function (theme, auto_disappear = true) {
     let node = createTemporaryDOMNode(LOADING_ELEMENT_ID)
     render(
-        <Loading unMountHandler={() => node.parentNode.removeChild(node)} />, node);
+        <CircleLoading unMountHandler={() => node.parentNode.removeChild(node)} />, node);
     auto_disappear &&
         setTimeout(() => unmountComponentAtNode(node), 6900);
 }
@@ -65,7 +65,7 @@ export {
     , showToast
     , Alert
     , Toast
-    , Loading
+    , CircleLoading
     , Nav
     , SVGCircleProgress
 }
