@@ -17,11 +17,8 @@ class Alert extends Component {
         title: '好像出了点问题!?'
     }
 
-    constructor() {
-        super();
-        this.state = {
-            show: true
-        };
+    state = {
+        show: true
     }
 
     hideHandler = () => {
@@ -56,7 +53,7 @@ class Alert extends Component {
             display: "table",
             margin: "50% auto 0",
             position: "relative",
-            width: window.innerWidth * 0.8 + "px",
+            width: "576px",
             borderRadius: "8px",
             background: "white"
         };
