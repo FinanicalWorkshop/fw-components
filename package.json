@@ -1,7 +1,7 @@
 {
     "name": "fw-components",
     "description": "used for Company project, private purpose",
-    "version": "0.0.2",
+    "version": "0.0.9",
     "author": "delong",
     "engines": {
         "node": ">=7"

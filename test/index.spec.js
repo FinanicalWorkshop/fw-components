@@ -1,7 +1,9 @@
 import assert from 'assert'
 import * as Components from '../index.js'
+import React from 'react'
+import { mount, shallow, render } from 'enzyme'
 
-describe('test', function () {
+describe('all fn in this module', function () {
     describe('', function () {
         before(function () {
 
