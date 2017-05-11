@@ -20,8 +20,8 @@ let createTemporaryDOMNode = function (id) {
 
 let showLoading = function (theme, auto_disappear = true) {
     let node = createTemporaryDOMNode(LOADING_ELEMENT_ID)
-    render(
-        <CircleLoading unMountHandler={() => node.parentNode.removeChild(node)} />, node);
+    render(<CircleLoading theme={theme} unMountHandler={
+        () => node.parentNode.removeChild(node)} />, node);
     auto_disappear &&
         setTimeout(() => unmountComponentAtNode(node), 6900);
 }
