@@ -1,32 +1,33 @@
 {
-  "name": "fw-components",
-  "description": "used for Company project, private purpose",
-  "version": "0.0.2",
-  "author": "delong",
-  "engines": {
-    "node": ">=7"
-  },
-  "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-es2015-node": "^6.1.1",
-    "babel-preset-react": "6.24.1",
-    "babel-preset-stage-2": "6.24.1",
-    "babel-register": "^6.24.1",
-    "enzyme": "^2.8.2",
-    "mocha": "^3.3",
-    "react-test-renderer": "^15.5.4"
-  },
-  "keywords": [
-    "金融工场",
-    "financial",
-    "workshop"
-  ],
-  "license": "BSD",
-  "scripts": {
-    "test": "node node_modules/mocha/bin/mocha --require babel-register --reporter=nyan"
-  }
+    "name": "fw-components",
+    "description": "used for Company project, private purpose",
+    "version": "0.0.2",
+    "author": "delong",
+    "engines": {
+        "node": ">=7"
+    },
+    "dependencies": {
+        "prop-types": "^15.5.9",
+        "react": "^15.5.4",
+        "react-dom": "^15.5.4"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.24.1",
+        "babel-preset-es2015-node": "^6.1.1",
+        "babel-preset-react": "6.24.1",
+        "babel-preset-stage-2": "6.24.1",
+        "babel-register": "^6.24.1",
+        "enzyme": "^2.8.2",
+        "mocha": "^3.3",
+        "react-test-renderer": "^15.5.4"
+    },
+    "keywords": [
+        "金融工场",
+        "financial",
+        "workshop"
+    ],
+    "license": "BSD",
+    "scripts": {
+        "test": "node node_modules/mocha/bin/mocha --require babel-register --reporter=nyan"
+    }
 }
