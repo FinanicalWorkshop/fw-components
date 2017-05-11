@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM, { findDOMNode, unmountComponentAtNode } from 'react-dom'
+import PropTypes from 'prop-types'
 
 class Toast extends Component {
     static defaultProps = {
@@ -8,23 +9,22 @@ class Toast extends Component {
     }
 
     constructor() {
-        super();
-        this.state = { offset: 0, opacity: 0 };
+        super()
+        this.state = { offset: 0, opacity: 0 }
     }
 
     componentDidMount() {
-        this.timer = setTimeout(this.hideHandler, this.props.duration);
+        this.timer = setTimeout(this.hideHandler, this.props.duration)
         this.setState({
             offset: findDOMNode(this.refs.self).offsetWidth,
             opacity: '1'
-        });
+        })
     }
 
     hideHandler = () => {
         this.setState({ opacity: 0 });
-        setTimeout(() => {
-            unmountComponentAtNode(document.getElementById(this.props.id));
-        }, this.props.animation)
+        setTimeout(() =>
+            unmountComponentAtNode(this.props.mountedNode), this.props.animation)
     }
 
     componentWillUnmount() {
@@ -48,12 +48,19 @@ class Toast extends Component {
             opacity: this.state.opacity,
             borderRadius: "5px",
             zIndex: "999"
-        };
+        }
 
-        return <div className="error-tip" style={style} ref="self">
+        return <div style={style} ref="self">
             {this.props.text}
         </div>
     }
+}
+
+Toast.propTypes = {
+    text: PropTypes.string,
+    mountedNode: PropTypes.object, // 被挂载的dom 节点
+    duration: PropTypes.number, // 显示时间
+    animation: PropTypes.number // 消失时的动画时间
 }
 
 export default Toast

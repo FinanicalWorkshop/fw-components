@@ -1,17 +1,6 @@
-import React, { Component } from 'react';
-
-/*
- * SVGCircleProgress组件，创建一个圆形进度条.
- * @constructor
- * @param {number} radius - 圆形的半径.
- * @param {number} weight - 圆形的线条宽度.
- * @param {number} percent - 进度的百分比, 整数表示, 取值范围 0 ~ 100.
- * @param {boolean} animate - 是否使用动画, 默认 true.
- * @param {number} padding - 圆形形状的内边距.
- * @param {string} animate - 是否使用动画, 默认 true.
- * @param {string} bgColor - 进度条背景颜色.
- * @param {string} progressColor - 进度条进度颜色.
- */
+import React, { Component } from 'react'
+import { unmountComponentAtNode } from 'react-dom'
+import PropTypes from 'prop-types'
 
 class SVGCircleProgress extends Component {
 
@@ -136,5 +125,15 @@ class SVGCircleProgress extends Component {
     }
 }
 
+SVGCircleProgress.propTypes = {
+    radius: PropTypes.number, // 圆形的半径.
+    weight: PropTypes.number, // 圆形的线条宽度.
+    percent: PropTypes.number, // 进度的百分比, 整数表示, 取值范围 0 ~ 100.
+    animate: PropTypes.boolean, // 是否使用动画, 默认 true.
+    padding: PropTypes.number, // 圆形形状的内边距.
+    bgColor: PropTypes.string, // 进度条背景颜色.
+    progressColor: PropTypes.string // 进度条进度颜色.
+}
 
+// * SVGCircleProgress组件，创建一个圆形进度条.
 export default SVGCircleProgress
