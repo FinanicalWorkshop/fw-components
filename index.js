@@ -2,8 +2,8 @@ import ReactDOM, { render, unmountComponentAtNode } from 'react-dom'
 import React from 'react'
 import Alert from './react/alert.js'
 import Toast from './react/toast.js'
-import Loading from './react/loading.js'
-import SVGCircleProgress from './react/circle-progress.js'
+import CircleLoading from './react/circle-loading.js'
+import SVGCircleProgress from './react/svg-circle-progress.js'
 import Nav from './react/nav.js'
 
 const LOADING_ELEMENT_ID = '_id_react_component_global_loading'
@@ -20,8 +20,8 @@ let createTemporaryDOMNode = function (id) {
 
 let showLoading = function (theme, auto_disappear = true) {
     let node = createTemporaryDOMNode(LOADING_ELEMENT_ID)
-    render(
-        <Loading unMountHandler={() => node.parentNode.removeChild(node)} />, node);
+    render(<CircleLoading theme={theme} unMountHandler={
+        () => node.parentNode.removeChild(node)} />, node);
     auto_disappear &&
         setTimeout(() => unmountComponentAtNode(node), 6900);
 }
@@ -45,13 +45,13 @@ let showAlert = function (title, options) {
     />, node);
 }
 
-let showToast = function (data) {
+let showToast = function (text) {
     var id = '_id_react_component_global_toast',
         node = createTemporaryDOMNode(id);
 
     render(<Toast
-        id={id}
-        text={data}
+        text={text}
+        mountedNode={node}
         unMountToast={() => node.parentNode.removeChild(node)}
     />, node)
 }
@@ -65,7 +65,7 @@ export {
     , showToast
     , Alert
     , Toast
-    , Loading
+    , CircleLoading
     , Nav
     , SVGCircleProgress
 }

@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-/*
- A 包装了 <a></a>
- */
 class Nav extends Component {
     constructor(props) {
         super(props)
@@ -36,14 +33,13 @@ class Nav extends Component {
 }
 
 class Wave extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            opacity: 1,
-            scale: 1,
-            dead: false
-        }
+
+    state = {
+        opacity: 1,
+        scale: 1,
+        dead: false
     }
+
     componentDidMount() {
         setTimeout(() => this.setState({ scale: 4 }), 30)
         setTimeout(() => this.setState({ opacity: 0 }), 200)
