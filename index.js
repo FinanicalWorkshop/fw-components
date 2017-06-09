@@ -37,10 +37,9 @@ let showAlert = function (title, options) {
         node = createTemporaryDOMNode(id);
 
     render(<Alert
-        id={id}
         title={title}
-        header={options.header}
         confirm_text={'确认'}
+        mountedNode={node}
         unMountAlert={() => node.parentNode.removeChild(node)}
     />, node);
 }
