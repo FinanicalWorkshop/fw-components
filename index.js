@@ -62,8 +62,8 @@ export {
     , showLoading
     , hideLoading
     , showToast
-    , Alert
-    , Toast
+    // , Alert
+    // , Toast
     , CircleLoading
     , Nav
     , SVGCircleProgress
