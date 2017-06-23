@@ -15,7 +15,7 @@ function getStyles(rotate) {
         height: '60px',
         top: '50%',
         left: '50%',
-        transition: 'all 1s linear',
+        transition: 'all 100ms linear',
         transform: `translate(-50%,-50%) rotate(${rotate}deg)`,
     }
 
@@ -30,7 +30,7 @@ function getStyles(rotate) {
         height: '30px',
         top: '20px',
         right: '30px',
-        transition: 'all 1s linear',
+        transition: 'all 100ms linear',
         transform: `rotate(${rotate}deg)`,
     }
 
@@ -65,9 +65,8 @@ class CircleLoading extends Component {
     }
 
     componentDidMount = () => {
-        this.setState({ rotate: 360 })
         this._timer = setInterval(() =>
-            this.setState({ rotate: this.state.rotate + 360 }), 1000)
+            this.setState({ rotate: this.state.rotate + 36 }), 100)
     }
 
     componentWillUnmount = () => {
