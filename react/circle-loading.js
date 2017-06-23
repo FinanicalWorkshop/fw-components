@@ -65,7 +65,7 @@ class CircleLoading extends Component {
     }
 
     componentDidMount = () => {
-        setTimeout(() => this.setState({ rotate: 360 }), 50)
+        this.setState({ rotate: 360 })
         this._timer = setInterval(() =>
             this.setState({ rotate: this.state.rotate + 360 }), 1000)
     }
