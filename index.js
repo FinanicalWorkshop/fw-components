@@ -28,7 +28,7 @@ let showLoading = function (theme, auto_disappear = true) {
 
 let hideLoading = () => {
     let node = document.getElementById(LOADING_ELEMENT_ID)
-    unmountComponentAtNode(node)
+    node && unmountComponentAtNode(node)
 }
 
 let showAlert = function (title, options) {
