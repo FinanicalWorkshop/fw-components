@@ -16,21 +16,22 @@ function getStyles(rotate) {
         top: '50%',
         left: '50%',
         transition: 'all 200ms linear',
-		opacity: rotate > 0 ? '1' : '0',
+        opacity: rotate > 0 ? '1' : '0',
         transform: `translate(-50%,-50%) rotate(${rotate}deg)`,
     }
 
     let _style_small_loader = {
         position: 'fixed',
+        width: '30px',
+        height: '30px',
+        top: '20px',
+        right: '30px',
+        opacity: '0.3',
         borderTop: '8px solid rgba(255, 255, 255, 0.2)',
         borderRight: '8px solid rgba(255, 255, 255, 0.2)',
         borderBottom: '8px solid rgba(255, 255, 255, 0.2)',
         borderLeft: '8px solid #e8e8e8',
         borderRadius: '50%',
-        width: '30px',
-        height: '30px',
-        top: '20px',
-        right: '30px',
         transition: 'all 200ms linear',
         transform: `rotate(${rotate}deg)`,
     }
@@ -82,7 +83,7 @@ class CircleLoading extends Component {
         let big_circle = <div className="_style_big_circle" style={styles.bg}>
             <div style={styles.loader}></div>
         </div>;
-		
+
         let small_circle = <div className="_style_small_circle" style={styles.small_loader}></div>;
 
         return <div>
