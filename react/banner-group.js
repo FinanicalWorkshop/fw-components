@@ -1,3 +1,4 @@
+
 /*
  <BannerGroup />
 
@@ -5,7 +6,11 @@
 
  */
 
-class BannerGroup extends React.Component {
+import React from 'react'
+import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
+
+export default class BannerGroup extends React.Component {
 
     static propTypes = {
         startIndex: PropTypes.number,
@@ -202,7 +207,7 @@ class BannerGroup extends React.Component {
         };
 
         return (
-            <div className={this.props.className + " global-banner-group"} style={style}>
+            <div className={this.props.className} style={style}>
                 <div style={{
                     width: this.state.width * (this.state.images.length + 2),
                     position: 'absolute',
