@@ -30,3 +30,7 @@
 * SVGCircleProgress
 
 SVG实现的 圆形进度条
+
+* BannerGroup
+
+滑动组图
