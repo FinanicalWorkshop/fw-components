@@ -12,12 +12,15 @@ function getStyles() {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'rgba(0,0,0,0.1)'
+            background: 'rgba(0,0,0,0.2)'
         },
         alert_panel: {
             display: "table",
-            margin: "50% auto 0",
-            position: "relative",
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            marginLeft: "-288px",
+            marginTop: "-101px",
             width: "576px",
             borderRadius: "8px",
             background: "white"
