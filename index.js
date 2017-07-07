@@ -3,6 +3,7 @@ import React from 'react'
 import Alert from './react/alert.js'
 import Toast from './react/toast.js'
 import CircleLoading from './react/circle-loading.js'
+import BannerGroup from './react/banner-group.js'
 import SVGCircleProgress from './react/svg-circle-progress.js'
 import Nav from './react/nav.js'
 
@@ -62,9 +63,8 @@ export {
     , showLoading
     , hideLoading
     , showToast
-    // , Alert
-    // , Toast
     , CircleLoading
+    , BannerGroup
     , Nav
     , SVGCircleProgress
 }
