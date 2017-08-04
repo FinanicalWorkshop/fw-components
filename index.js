@@ -34,26 +34,36 @@ let hideLoading = () => {
 
 let showAlert = function (title, options) {
     options = options || {};
-    var id = '_id_react_component_global_alert',
+    let id = '_id_react_component_global_alert',
         node = createTemporaryDOMNode(id);
 
-    render(<Alert
-        text={title}
-        confirm_text={'确认'}
-        mountedNode={node}
-        unMountAlert={() => node.parentNode.removeChild(node)}
-    />, node);
+    return new Promise((resolve, _) => {
+        render(<Alert
+            text={title}
+            confirm_text={'确认'}
+            mountedNode={node}
+            unMountAlert={() => {
+                node.parentNode.removeChild(node)
+                resolve()
+            }}
+        />, node)
+    })
 }
 
 let showToast = function (text) {
-    var id = '_id_react_component_global_toast',
+    let id = '_id_react_component_global_toast',
         node = createTemporaryDOMNode(id);
 
-    render(<Toast
-        text={text}
-        mountedNode={node}
-        unMountToast={() => node.parentNode.removeChild(node)}
-    />, node)
+    return new Promise((resolve, _) => {
+        render(<Toast
+            text={text}
+            mountedNode={node}
+            unMountToast={() => {
+                node.parentNode.removeChild(node)
+                resolve()
+            }}
+        />, node)
+    })
 }
 
 
