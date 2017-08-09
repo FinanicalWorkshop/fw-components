@@ -47,7 +47,7 @@ class Toast extends Component {
             transition: `opacity ${this.props.animation}ms ease-in-out`,
             opacity: this.state.opacity,
             borderRadius: "5px",
-            zIndex: "999"
+            zIndex: "99"
         }
 
         return <div style={style} ref="self">
