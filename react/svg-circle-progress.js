@@ -129,7 +129,7 @@ SVGCircleProgress.propTypes = {
     radius: PropTypes.number, // 圆形的半径.
     weight: PropTypes.number, // 圆形的线条宽度.
     percent: PropTypes.number, // 进度的百分比, 整数表示, 取值范围 0 ~ 100.
-    animate: PropTypes.boolean, // 是否使用动画, 默认 true.
+    animate: PropTypes.bool, // 是否使用动画, 默认 true.
     padding: PropTypes.number, // 圆形形状的内边距.
     bgColor: PropTypes.string, // 进度条背景颜色.
     progressColor: PropTypes.string // 进度条进度颜色.
