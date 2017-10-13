@@ -10,13 +10,12 @@ class Toast extends Component {
 
     constructor() {
         super()
-        this.state = { offset: 0, opacity: 0 }
+        this.state = { opacity: 0 }
     }
 
     componentDidMount() {
         this.timer = setTimeout(this.hideHandler, this.props.duration)
         this.setState({
-            offset: findDOMNode(this.refs.self).offsetWidth,
             opacity: '1'
         })
     }
@@ -50,7 +49,7 @@ class Toast extends Component {
             zIndex: "99"
         }
 
-        return <div style={style} ref="self">
+        return <div style={style}>
             {this.props.text}
         </div>
     }
