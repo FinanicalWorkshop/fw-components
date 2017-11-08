@@ -66,7 +66,8 @@ export default class BannerGroup extends React.Component {
     }
 
     initHandler = () => {
-        let elem = ReactDOM.findDOMNode(this);
+        // React16 以后 findDOMNode 查找不到, 就用 refs 来兼容
+        let elem = ReactDOM.findDOMNode(this) || this.parentPanel;
         let w = elem.offsetWidth;
         this.setState({
             show: true,
@@ -207,7 +208,9 @@ export default class BannerGroup extends React.Component {
         };
 
         return (
-            <div className={this.props.className} style={style}>
+            <div className={this.props.className} style={style}
+                ref={(div) => this.parentPanel = div}>
+
                 <div style={{
                     width: this.state.width * (this.state.images.length + 2),
                     position: 'absolute',
