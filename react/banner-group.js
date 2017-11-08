@@ -94,23 +94,25 @@ export default class BannerGroup extends React.Component {
         this._onAnimate = true;
 
         this._timer = setInterval(function () {
-            if (Math.abs(this.state.left - targetLeft) <= Math.abs(step * 1.5)) {
-                clearInterval(this._timer);
+            window.requestAnimationFrame(() => {
+                if (Math.abs(this.state.left - targetLeft) <= Math.abs(step * 1.5)) {
+                    clearInterval(this._timer);
 
-                if (ti == 0) {
-                    ti = lastIndex;
-                    targetLeft = -this.state.width * ti;
-                } else if (ti == lastIndex + 1) {
-                    ti = 1;
-                    targetLeft = -this.state.width * ti;
+                    if (ti == 0) {
+                        ti = lastIndex;
+                        targetLeft = -this.state.width * ti;
+                    } else if (ti == lastIndex + 1) {
+                        ti = 1;
+                        targetLeft = -this.state.width * ti;
+                    }
+                    if (this.state.index != ti) this.props.afterIndexChange && this.props.afterIndexChange(ti);
+
+                    this._onAnimate = false;
+                    this.setState({ left: targetLeft, index: ti });
+                } else {
+                    this.setState({ left: this.state.left + step })
                 }
-                if (this.state.index != ti) this.props.afterIndexChange && this.props.afterIndexChange(ti);
-
-                this._onAnimate = false;
-                this.setState({ left: targetLeft, index: ti });
-            } else {
-                this.setState({ left: this.state.left + step })
-            }
+            })
         }.bind(this), 20)
     }
 

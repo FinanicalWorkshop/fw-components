@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactDOM, { findDOMNode, unmountComponentAtNode } from 'react-dom'
+import ReactDOM, { unmountComponentAtNode } from 'react-dom'
 import PropTypes from 'prop-types'
 
 class Toast extends Component {
