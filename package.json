@@ -1,16 +1,16 @@
 {
     "name": "fw-components",
     "description": "used for Company project, private purpose",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "author": "delong",
     "homepage": "https://github.com/FinanicalWorkshop/fw-components",
     "engines": {
         "node": ">=7"
     },
     "dependencies": {
-        "prop-types": "^15.5.9",
-        "react": "^15.5.4",
-        "react-dom": "^15.5.4"
+        "prop-types": "^15.6.0",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0"
     },
     "devDependencies": {
         "babel-cli": "^6.24.1",

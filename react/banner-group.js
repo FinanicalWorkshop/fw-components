@@ -67,7 +67,8 @@ export default class BannerGroup extends React.Component {
 
     initHandler = () => {
         // React16 以后 findDOMNode 查找不到, 就用 refs 来兼容
-        let elem = ReactDOM.findDOMNode(this) || this.parentPanel;
+        // let elem = ReactDOM.findDOMNode(this);
+        let elem = this.parentPanel;
         let w = elem.offsetWidth;
         this.setState({
             show: true,
