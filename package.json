@@ -1,7 +1,7 @@
 {
     "name": "fw-components",
     "description": "used for Company project, private purpose",
-    "version": "0.6.1",
+    "version": "0.6.2",
     "author": "delong",
     "homepage": "https://github.com/FinanicalWorkshop/fw-components",
     "engines": {
