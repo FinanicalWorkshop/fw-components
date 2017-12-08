@@ -1,30 +1,28 @@
 {
     "name": "fw-components",
     "description": "used for Company project, private purpose",
-    "version": "0.6.2",
+    "version": "0.7.0",
     "author": "delong",
     "homepage": "https://github.com/FinanicalWorkshop/fw-components",
     "engines": {
-        "node": ">=7"
+        "node": ">=8"
+    },
+    "dependencies": {
+        "babel-preset-es2015-node": "^6.1.1"
     },
     "devDependencies": {
-        "prop-types": "^15.6.0",
-        "react": "^16.0.0",
-        "react-dom": "^16.0.0",
-        "babel-cli": "^6.24.1",
-        "babel-preset-es2015-node": "^6.1.1",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "babel-cli": "^6.26.0",
         "babel-preset-react": "6.24.1",
         "babel-preset-stage-2": "6.24.1",
-        "babel-register": "^6.24.1",
-        "enzyme": "^2.8.2",
-        "mocha": "^3.3",
-        "react-test-renderer": "^15.5.4"
+        "babel-register": "^6.26.0",
+        "enzyme": "^3.2.0",
+        "enzyme-adapter-react-16": "^1.1.0",
+        "mocha": "^4.0.1",
+        "prop-types": "^15.6.0",
+        "react-test-renderer": "^16.2.0"
     },
-    "keywords": [
-        "金融工场",
-        "financial",
-        "workshop"
-    ],
     "license": "BSD",
     "scripts": {
         "test": "node node_modules/mocha/bin/mocha --require babel-register --reporter=nyan"

@@ -1,7 +1,10 @@
 import assert from 'assert'
 import CircleLoading from '../react/circle-loading.js'
 import React from 'react'
-import { mount, shallow, render } from 'enzyme'
+
+import Enzyme, { shallow } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+Enzyme.configure({ adapter: new Adapter() })
 
 describe('<CircleLoading />', function () {
     it('it should export CircleLoading component', () => {
