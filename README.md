@@ -77,9 +77,9 @@
 
 ```javascript
 
-    import { showAreaSelector } from 'fw-components'
+    import { showAreaSelector } from 'fw-components/react/area-selector.js'
 
-    showAreaSelector(['北京', '北京市', '朝阳区']).then(data => {
+    showAreaSelector(['北京', '北京市', '朝阳区']).then(data => {
         console.log(...data) // => 辽宁省, 沈阳市, 皇姑区
     })
    
