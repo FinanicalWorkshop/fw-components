@@ -4,16 +4,36 @@
 
 抽象出了公共组件, 方便其它项目使用.
 
-
-* createTemporaryDOMNode
-
-创建临时DOM节点
+#### 创建临时DOM节点
  
-* showAlert
-  
-这是一个 `方法`
+`createTemporaryDOMNode`
 
-展示一个警告框
+```javascript
+
+    import { createTemporaryDOMNode } from 'fw-components'
+
+    let id = '_this_is_a_global_element',
+        node = createTemporaryDOMNode(id);
+
+```
+
+#### 警告弹出框
+
+`showAlert`
+
+```javascript
+
+    import { showAlert } from 'fw-components'
+
+    showAlert('Test').then(()=> {
+        // until user click confirm button, go next step
+    })
+   
+```
+
+![showAlert](https://github.com/FinanicalWorkshop/fw-components/tree/master/images/QQ20180110-174658.png)
+
+#### 展示一个警告框
   
 * showLoading
 
@@ -21,16 +41,49 @@
   
 * showToast
 
-这是一个 `方法`
+#### 弹出提示框(2s后自动隐藏)
 
-显示一个提示语句, 2(?)秒后消失
+`showToast`
 
-* CircleLoading
+```javascript
 
-* SVGCircleProgress
+    import { showToast } from 'fw-components'
 
-SVG实现的 圆形进度条
+    showToast('Test').then(()=> {
+        // until toast disappeared go next step
+    })
+   
+```
 
-* BannerGroup
+![showToast](https://github.com/FinanicalWorkshop/fw-components/tree/master/images/QQ20180110-175250.png)
 
-滑动组图
+#### 滑动组图
+
+`BannerGroup`
+
+```javascript
+
+    import { BannerGroup } from 'fw-components'
+
+    // jsx
+    <BannerGroup images={[img1, img2, img3]}/>
+   
+```
+
+![BannerGroup](https://github.com/FinanicalWorkshop/fw-components/tree/master/images/QQ20180110-175832.png)
+
+#### 选择省市县
+
+`showAreaSelector`
+
+```javascript
+
+    import { showAreaSelector } from 'fw-components'
+
+    showAreaSelector(['北京', '北京市', '朝阳区']).then(data => {
+        console.log(...data) // => 辽宁省, 沈阳市, 皇姑区
+    })
+   
+```
+
+![showAreaSelector](https://github.com/FinanicalWorkshop/fw-components/tree/master/images/QQ20180110-180217.png)
