@@ -69,7 +69,7 @@
    
 ```
 
-![BannerGroup](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180111-103201.png)
+![BannerGroup](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180110-175832.png)
 
 #### 选择省市县
 
@@ -85,4 +85,4 @@
    
 ```
 
-![showAreaSelector](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180110-180217.png)
+![showAreaSelector](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180111-103201.png)
