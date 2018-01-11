@@ -28,7 +28,6 @@
     showAlert('Test').then(()=> {
         // until user click confirm button, go next step
     })
-   
 ```
 
 ![showAlert](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180110-174658.png)
@@ -41,7 +40,7 @@
   
 * showToast
 
-#### 弹出提示框(2s后自动隐藏)
+#### 弹出提示框(2s后自动隐藏)
 
 `showToast`
 
@@ -52,7 +51,7 @@
     showToast('Test').then(()=> {
         // until toast disappeared go next step
     })
-   
+   
 ```
 
 ![showToast](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180110-175250.png)
@@ -65,14 +64,14 @@
 
     import { BannerGroup } from 'fw-components'
 
-    // jsx
+    // jsx
     <BannerGroup images={[img1, img2, img3]}/>
-   
+   
 ```
 
 ![BannerGroup](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180110-175832.png)
 
-#### 选择省市县
+#### 选择省市县
 
 `showAreaSelector`
 
@@ -83,7 +82,7 @@
     showAreaSelector(['北京', '北京市', '朝阳区']).then(data => {
         console.log(...data) // => 辽宁省, 沈阳市, 皇姑区
     })
-   
+   
 ```
 
 ![showAreaSelector](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180110-180217.png)
