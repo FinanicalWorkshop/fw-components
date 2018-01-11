@@ -31,7 +31,7 @@
    
 ```
 
-![showAlert](https://github.com/FinanicalWorkshop/fw-components/tree/master/images/QQ20180110-174658.png)
+![showAlert](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180110-174658.png)
 
 #### 展示一个警告框
   
@@ -55,7 +55,7 @@
    
 ```
 
-![showToast](https://github.com/FinanicalWorkshop/fw-components/tree/master/images/QQ20180110-175250.png)
+![showToast](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180110-175250.png)
 
 #### 滑动组图
 
@@ -70,7 +70,7 @@
    
 ```
 
-![BannerGroup](https://github.com/FinanicalWorkshop/fw-components/tree/master/images/QQ20180110-175832.png)
+![BannerGroup](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180110-175832.png)
 
 #### 选择省市县
 
@@ -86,4 +86,4 @@
    
 ```
 
-![showAreaSelector](https://github.com/FinanicalWorkshop/fw-components/tree/master/images/QQ20180110-180217.png)
+![showAreaSelector](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180110-180217.png)
