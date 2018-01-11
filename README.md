@@ -30,7 +30,7 @@
     })
 ```
 
-![showAlert](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180110-174658.png)
+![showAlert](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180111-103139.png)
 
 #### 展示一个警告框
   
@@ -54,7 +54,7 @@
    
 ```
 
-![showToast](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180110-175250.png)
+![showToast](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180111-103056.png)
 
 #### 滑动组图
 
@@ -69,7 +69,7 @@
    
 ```
 
-![BannerGroup](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180110-175832.png)
+![BannerGroup](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180111-103201.png)
 
 #### 选择省市县
 
@@ -77,7 +77,7 @@
 
 ```javascript
 
-    import { showAreaSelector } from 'fw-components/react/area-selector.js'
+    import { showAreaSelector } from 'fw-components/react/area-selector'
 
     showAreaSelector(['北京', '北京市', '朝阳区']).then(data => {
         console.log(...data) // => 辽宁省, 沈阳市, 皇姑区
