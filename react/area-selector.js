@@ -153,6 +153,12 @@ class AreaSelector extends React.Component {
             this.setState({ selected: [] }, this.hideHandler)
     }
 
+    touchMoveHandler = (event) => {
+        // event.preventDefault();
+        event.stopPropagation();
+        event.nativeEvent.stopImmediatePropagation();
+    }
+
     render() {
         let { selected, order } = this.state
 
@@ -171,7 +177,7 @@ class AreaSelector extends React.Component {
         }
 
         return <div style={STYLE.bg} onClick={this.cancelHandler}>
-            <div style={STYLE.panel}>
+            <div style={STYLE.panel} onTouchMove={this.touchMoveHandler}>
                 <a style={STYLE.btnConfirm} onClick={this.confirmHandler}>确定</a>
 
                 <div style={STYLE.selected}>
