@@ -70,8 +70,7 @@ function getStyles(rotate) {
 
 class CircleLoading extends Component {
     static defaultProps = {
-        theme: '',
-        block: false
+        theme: ''
     }
 
     state = {
@@ -89,7 +88,7 @@ class CircleLoading extends Component {
     }
 
     render() {
-        let { theme, block } = this.props;
+        let { theme } = this.props;
         let styles = getStyles(this.state.rotate)
 
         let big_circle = <div className="_style_big_circle" style={styles.bg}>
@@ -98,7 +97,7 @@ class CircleLoading extends Component {
 
         let small_circle = <div className="_style_small_circle" style={styles.small_loader}></div>;
 
-        return <div className="_style_block_background" style={block ? styles.block : {}}>
+        return <div className="_style_block_background" style={theme == 'block' ? styles.block : {}}>
             {theme != 'tiny' && big_circle}
             {small_circle}
         </div>
@@ -106,8 +105,15 @@ class CircleLoading extends Component {
 }
 
 CircleLoading.propTypes = {
-    theme: PropTypes.string,
-    block: PropTypes.bool
+    /*
+    mini : 标准loading 样式, 
+    tiny: 只在右上角有一个小圆圈, 
+    block: loading过程中, 覆盖住后面的元素, 使之不能点击
+
+    3种 theme, 之间有一种冲突情况: 不能同时选择 tiny 和 block (设计缺陷?) , 
+    因为不会出现这种情况, 所以不重要
+     */
+    theme: PropTypes.string 
 }
 
 export default CircleLoading
