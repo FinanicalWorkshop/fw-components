@@ -50,7 +50,18 @@ function getStyles(rotate) {
         background: 'rgba(0,0,0,0.3)'
     }
 
+    let _style_block = {
+        zIndex: 999,
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'rgba(160,160,160,0.1)'
+    }
+
     return {
+        block: _style_block,
         bg: _style_bg,
         loader: _style_loader,
         small_loader: _style_small_loader
@@ -59,7 +70,8 @@ function getStyles(rotate) {
 
 class CircleLoading extends Component {
     static defaultProps = {
-        theme: ''
+        theme: '',
+        block: false
     }
 
     state = {
@@ -77,7 +89,7 @@ class CircleLoading extends Component {
     }
 
     render() {
-        let { theme } = this.props;
+        let { theme, block } = this.props;
         let styles = getStyles(this.state.rotate)
 
         let big_circle = <div className="_style_big_circle" style={styles.bg}>
@@ -86,7 +98,7 @@ class CircleLoading extends Component {
 
         let small_circle = <div className="_style_small_circle" style={styles.small_loader}></div>;
 
-        return <div>
+        return <div className="_style_block_background" style={block ? styles.block : {}}>
             {theme != 'tiny' && big_circle}
             {small_circle}
         </div>
@@ -94,7 +106,8 @@ class CircleLoading extends Component {
 }
 
 CircleLoading.propTypes = {
-    theme: PropTypes.string
+    theme: PropTypes.string,
+    block: PropTypes.bool
 }
 
 export default CircleLoading
