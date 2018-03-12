@@ -1,7 +1,7 @@
 {
     "name": "fw-components",
     "description": "this is a reuseable React components lib",
-    "version": "0.9.0",
+    "version": "1.0.0",
     "author": "deron",
     "homepage": "https://github.com/FinanicalWorkshop/fw-components",
     "engines": {

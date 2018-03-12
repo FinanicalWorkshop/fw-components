@@ -79,10 +79,16 @@
 
     import { showAreaSelector } from 'fw-components/react/area-selector'
 
-    showAreaSelector(['北京', '北京市', '朝阳区']).then(data => {
-        console.log(...data) // => 辽宁省, 沈阳市, 皇姑区
-    })
+    showAreaSelector(['北京', '北京市', '朝阳区'], false)
+        .then(data => {
+            console.log(...data) // => 辽宁省, 沈阳市, 皇姑区
+        })
    
 ```
+
+showAreaSelector(selected, autoComplete)
+
+* selected : 已选择地区
+* autoComplete : 是否在选择完最后一个地区后, 自动完成当前交互并返回结果
 
 ![showAreaSelector](https://raw.githubusercontent.com/FinanicalWorkshop/fw-components/master/images/QQ20180111-103201.png)

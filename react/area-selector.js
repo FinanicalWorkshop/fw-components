@@ -13,7 +13,6 @@ let createTemporaryDOMNode = function (id) {
     return node
 }
 
-
 const STYLE = {
     bg: {
         position: 'fixed',
@@ -120,23 +119,33 @@ class AreaSelector extends React.Component {
 
     selectHandler = area => {
         let { selected, order } = this.state
+        // 下面两行不像看起来那么简单, 不要轻举妄动
         selected[this.state.order] = area
         selected = selected.slice(0, this.state.order + 1)
 
-
         // 判断是否到了最后一级
-        let t_a = AREA_DATA.slice(0), t_o = 0
+        let t_a = AREA_DATA.slice(0), t_o = 0, touchend = false
+
         for (let i = 0; i < selected.length; i++) {
             let names = t_a.map(x => x.name || x),
                 t_s = names.indexOf(selected[i])
-            if (t_s > -1 && t_a[t_s].area && ++t_o <= order) {
-                t_a = t_a[t_s].area
+
+            if (t_s < 0) break;
+            t_a = t_a[t_s].area
+
+            if(!t_a) {
+                touchend = true
+                break
             }
+            t_o++
         }
 
         this.setState({
             selected: selected,
             order: t_o
+        }, ()=>{
+            if(this.props.autoConfirm && touchend)
+                this.confirmHandler()
         })
     }
 
@@ -171,15 +180,16 @@ class AreaSelector extends React.Component {
         let area = (i, index) => {
             return <div style={STYLE.area} key={i} onClick={
                 () => this.selectHandler(i)}>{i}
-
                 {selected[order] == i &&
                     <div style={STYLE.checkedArea}>&#10004;</div>}
             </div>
         }
 
+        let styleConfirm = this.props.autoConfirm ? {display: 'none'} : STYLE.btnConfirm
+
         return <div style={STYLE.bg} onClick={this.cancelHandler}>
             <div style={STYLE.panel} onTouchMove={this.touchMoveHandler}>
-                <a style={STYLE.btnConfirm} onClick={this.confirmHandler}>确定</a>
+                <a style={styleConfirm} onClick={this.confirmHandler}>确定</a>
 
                 <div style={STYLE.selected}>
                     {selected.map(selected_item)}
@@ -194,17 +204,19 @@ class AreaSelector extends React.Component {
 
 AreaSelector.defaultProps = {
     selected: [],
+    autoConfirm: false,
     mountedNode: null, // document node to be mounted
     unmountHandler: () => null // 组件卸载时的回调函数
 }
 
-let showAreaSelector = function (area_list = []) {
+let showAreaSelector = function (area_list = [], autoConfirm = false) {
     let id = '_id_react_component_global_area_selector',
         node = createTemporaryDOMNode(id);
 
     return new Promise((resolve, reject) => {
         render(<AreaSelector
             selected={area_list}
+            autoConfirm={autoConfirm}
             mountedNode={node}
             unmountHandler={data => {
                 node.parentNode.removeChild(node)
